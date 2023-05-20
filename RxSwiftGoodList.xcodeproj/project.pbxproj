@@ -7,23 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390D7CB82A18F903004102D5 /* TaskListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CB72A18F903004102D5 /* TaskListTableView.swift */; };
+		390D7CBA2A18F92F004102D5 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CB92A18F92F004102D5 /* TaskListView.swift */; };
+		390D7CBC2A18F9FB004102D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBB2A18F9FB004102D5 /* Extensions.swift */; };
+		390D7CBE2A18FDD7004102D5 /* CustomConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBD2A18FDD7004102D5 /* CustomConstants.swift */; };
+		390D7CC02A19001E004102D5 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */; };
 		39F8CF0C2A18F65200F310F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */; };
 		39F8CF0E2A18F65200F310F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */; };
-		39F8CF102A18F65200F310F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0F2A18F65200F310F9 /* ViewController.swift */; };
-		39F8CF132A18F65200F310F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F8CF112A18F65200F310F9 /* Main.storyboard */; };
+		39F8CF102A18F65200F310F9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */; };
 		39F8CF152A18F65200F310F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39F8CF142A18F65200F310F9 /* Assets.xcassets */; };
 		39F8CF182A18F65200F310F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 39F8CF162A18F65200F310F9 /* LaunchScreen.storyboard */; };
+		C10B8C8D9DACD5E49F897F02 /* Pods_RxSwiftGoodList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914C7070CEA320462D07C597 /* Pods_RxSwiftGoodList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B5F813F85CD85D9873E1829 /* Pods-RxSwiftGoodList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftGoodList.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList.release.xcconfig"; sourceTree = "<group>"; };
+		390D7CB72A18F903004102D5 /* TaskListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableView.swift; sourceTree = "<group>"; };
+		390D7CB92A18F92F004102D5 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		390D7CBB2A18F9FB004102D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		390D7CBD2A18FDD7004102D5 /* CustomConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConstants.swift; sourceTree = "<group>"; };
+		390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
 		39F8CF082A18F65200F310F9 /* RxSwiftGoodList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftGoodList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		39F8CF0F2A18F65200F310F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		39F8CF122A18F65200F310F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		39F8CF142A18F65200F310F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39F8CF172A18F65200F310F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		39F8CF192A18F65200F310F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		914C7070CEA320462D07C597 /* Pods_RxSwiftGoodList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwiftGoodList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938DBB139DBCEEEEA51774CB /* Pods-RxSwiftGoodList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftGoodList.debug.xcconfig"; path = "Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C10B8C8D9DACD5E49F897F02 /* Pods_RxSwiftGoodList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		044C171006133CE768D57903 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				914C7070CEA320462D07C597 /* Pods_RxSwiftGoodList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		390D7CB62A18F88D004102D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				390D7CB72A18F903004102D5 /* TaskListTableView.swift */,
+				390D7CB92A18F92F004102D5 /* TaskListView.swift */,
+				390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		39F8CEFF2A18F65200F310F9 = {
 			isa = PBXGroup;
 			children = (
 				39F8CF0A2A18F65200F310F9 /* RxSwiftGoodList */,
 				39F8CF092A18F65200F310F9 /* Products */,
+				B7D7EF38436A3B52940B604F /* Pods */,
+				044C171006133CE768D57903 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +89,26 @@
 		39F8CF0A2A18F65200F310F9 /* RxSwiftGoodList */ = {
 			isa = PBXGroup;
 			children = (
+				390D7CB62A18F88D004102D5 /* View */,
 				39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */,
 				39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */,
-				39F8CF0F2A18F65200F310F9 /* ViewController.swift */,
-				39F8CF112A18F65200F310F9 /* Main.storyboard */,
+				39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */,
 				39F8CF142A18F65200F310F9 /* Assets.xcassets */,
 				39F8CF162A18F65200F310F9 /* LaunchScreen.storyboard */,
 				39F8CF192A18F65200F310F9 /* Info.plist */,
+				390D7CBB2A18F9FB004102D5 /* Extensions.swift */,
+				390D7CBD2A18FDD7004102D5 /* CustomConstants.swift */,
 			);
 			path = RxSwiftGoodList;
+			sourceTree = "<group>";
+		};
+		B7D7EF38436A3B52940B604F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				938DBB139DBCEEEEA51774CB /* Pods-RxSwiftGoodList.debug.xcconfig */,
+				1B5F813F85CD85D9873E1829 /* Pods-RxSwiftGoodList.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 39F8CF1C2A18F65200F310F9 /* Build configuration list for PBXNativeTarget "RxSwiftGoodList" */;
 			buildPhases = (
+				5CA6E8EC12AB192C6FFBEC61 /* [CP] Check Pods Manifest.lock */,
 				39F8CF042A18F65200F310F9 /* Sources */,
 				39F8CF052A18F65200F310F9 /* Frameworks */,
 				39F8CF062A18F65200F310F9 /* Resources */,
+				9C748B56D34C7DC7E8EC4F5A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,18 +173,64 @@
 			files = (
 				39F8CF182A18F65200F310F9 /* LaunchScreen.storyboard in Resources */,
 				39F8CF152A18F65200F310F9 /* Assets.xcassets in Resources */,
-				39F8CF132A18F65200F310F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CA6E8EC12AB192C6FFBEC61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RxSwiftGoodList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C748B56D34C7DC7E8EC4F5A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		39F8CF042A18F65200F310F9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39F8CF102A18F65200F310F9 /* ViewController.swift in Sources */,
+				390D7CC02A19001E004102D5 /* TaskListTableViewCell.swift in Sources */,
+				390D7CBE2A18FDD7004102D5 /* CustomConstants.swift in Sources */,
+				390D7CB82A18F903004102D5 /* TaskListTableView.swift in Sources */,
+				390D7CBC2A18F9FB004102D5 /* Extensions.swift in Sources */,
+				39F8CF102A18F65200F310F9 /* TaskListViewController.swift in Sources */,
+				390D7CBA2A18F92F004102D5 /* TaskListView.swift in Sources */,
 				39F8CF0C2A18F65200F310F9 /* AppDelegate.swift in Sources */,
 				39F8CF0E2A18F65200F310F9 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +239,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		39F8CF112A18F65200F310F9 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39F8CF122A18F65200F310F9 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		39F8CF162A18F65200F310F9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +366,7 @@
 		};
 		39F8CF1D2A18F65200F310F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 938DBB139DBCEEEEA51774CB /* Pods-RxSwiftGoodList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +377,6 @@
 				INFOPLIST_FILE = RxSwiftGoodList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -310,6 +394,7 @@
 		};
 		39F8CF1E2A18F65200F310F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B5F813F85CD85D9873E1829 /* Pods-RxSwiftGoodList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +405,6 @@
 				INFOPLIST_FILE = RxSwiftGoodList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
