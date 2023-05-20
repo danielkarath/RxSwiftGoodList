@@ -14,9 +14,11 @@ class TaskListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = CustomConstants.backgroundColor
+        taskListView.delegate = self
         setupConstraints()
         // Do any additional setup after loading the view.
     }
+    
 
     private func setupConstraints() {
         view.addSubviews(taskListView)
@@ -29,4 +31,12 @@ class TaskListViewController: UIViewController {
         ])
     }
 
+}
+
+extension TaskListViewController: TaskListViewDelegate {
+    func didAddNewTask() {
+        print("Did tap add new task")
+        let addNewTaskVC = AddTaskViewController()
+        self.present(addNewTaskVC, animated: true, completion: nil)
+    }
 }

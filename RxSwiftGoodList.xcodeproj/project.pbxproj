@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390D7CB82A18F903004102D5 /* TaskListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CB72A18F903004102D5 /* TaskListTableView.swift */; };
 		390D7CBA2A18F92F004102D5 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CB92A18F92F004102D5 /* TaskListView.swift */; };
 		390D7CBC2A18F9FB004102D5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBB2A18F9FB004102D5 /* Extensions.swift */; };
 		390D7CBE2A18FDD7004102D5 /* CustomConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBD2A18FDD7004102D5 /* CustomConstants.swift */; };
 		390D7CC02A19001E004102D5 /* TaskListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */; };
+		390D7CC32A19065C004102D5 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CC22A19065C004102D5 /* AddTaskViewController.swift */; };
+		390D7CC52A1909A6004102D5 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390D7CC42A1909A6004102D5 /* AddTaskView.swift */; };
 		39F8CF0C2A18F65200F310F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */; };
 		39F8CF0E2A18F65200F310F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */; };
 		39F8CF102A18F65200F310F9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */; };
@@ -22,11 +23,12 @@
 
 /* Begin PBXFileReference section */
 		1B5F813F85CD85D9873E1829 /* Pods-RxSwiftGoodList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwiftGoodList.release.xcconfig"; path = "Target Support Files/Pods-RxSwiftGoodList/Pods-RxSwiftGoodList.release.xcconfig"; sourceTree = "<group>"; };
-		390D7CB72A18F903004102D5 /* TaskListTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableView.swift; sourceTree = "<group>"; };
 		390D7CB92A18F92F004102D5 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		390D7CBB2A18F9FB004102D5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		390D7CBD2A18FDD7004102D5 /* CustomConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConstants.swift; sourceTree = "<group>"; };
 		390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewCell.swift; sourceTree = "<group>"; };
+		390D7CC22A19065C004102D5 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		390D7CC42A1909A6004102D5 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		39F8CF082A18F65200F310F9 /* RxSwiftGoodList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftGoodList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,11 +63,20 @@
 		390D7CB62A18F88D004102D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				390D7CB72A18F903004102D5 /* TaskListTableView.swift */,
 				390D7CB92A18F92F004102D5 /* TaskListView.swift */,
+				390D7CC42A1909A6004102D5 /* AddTaskView.swift */,
 				390D7CBF2A19001E004102D5 /* TaskListTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		390D7CC12A190637004102D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */,
+				390D7CC22A19065C004102D5 /* AddTaskViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		39F8CEFF2A18F65200F310F9 = {
@@ -90,9 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				390D7CB62A18F88D004102D5 /* View */,
+				390D7CC12A190637004102D5 /* Controllers */,
 				39F8CF0B2A18F65200F310F9 /* AppDelegate.swift */,
 				39F8CF0D2A18F65200F310F9 /* SceneDelegate.swift */,
-				39F8CF0F2A18F65200F310F9 /* TaskListViewController.swift */,
 				39F8CF142A18F65200F310F9 /* Assets.xcassets */,
 				39F8CF162A18F65200F310F9 /* LaunchScreen.storyboard */,
 				39F8CF192A18F65200F310F9 /* Info.plist */,
@@ -227,11 +238,12 @@
 			files = (
 				390D7CC02A19001E004102D5 /* TaskListTableViewCell.swift in Sources */,
 				390D7CBE2A18FDD7004102D5 /* CustomConstants.swift in Sources */,
-				390D7CB82A18F903004102D5 /* TaskListTableView.swift in Sources */,
 				390D7CBC2A18F9FB004102D5 /* Extensions.swift in Sources */,
+				390D7CC52A1909A6004102D5 /* AddTaskView.swift in Sources */,
 				39F8CF102A18F65200F310F9 /* TaskListViewController.swift in Sources */,
 				390D7CBA2A18F92F004102D5 /* TaskListView.swift in Sources */,
 				39F8CF0C2A18F65200F310F9 /* AppDelegate.swift in Sources */,
+				390D7CC32A19065C004102D5 /* AddTaskViewController.swift in Sources */,
 				39F8CF0E2A18F65200F310F9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
