@@ -14,7 +14,7 @@ class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = CustomConstants.backgroundColor
-        //addTaskView.delegate = self
+        addTaskView.delegate = self
         setupConstraints()
     }
     
@@ -30,4 +30,11 @@ class AddTaskViewController: UIViewController {
         ])
     }
 
+}
+
+extension AddTaskViewController: AddTaskViewDelegate {
+    func didSaveTask() {
+        print("Did tap save task")
+        self.dismiss(animated: true)
+    }
 }
