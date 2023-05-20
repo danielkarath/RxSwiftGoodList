@@ -17,8 +17,17 @@ extension UIView {
 }
 
 extension UISegmentedControl {
-    func font(name:String?, size:CGFloat?) {
-        let attributedSegmentFont = NSDictionary(object: UIFont(name: name!, size: size!)!, forKey: NSAttributedString.Key.font as NSCopying)
-        setTitleTextAttributes(attributedSegmentFont as [NSObject : AnyObject] as [NSObject : AnyObject] as? [NSAttributedString.Key : Any], for: .normal)
+    func font(name: String?, size: CGFloat?, normalColor: UIColor, selectedColor: UIColor) {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: name ?? "", size: size ?? 0.0) as Any,
+            .foregroundColor: normalColor
+        ]
+        setTitleTextAttributes(attributes, for: .normal)
+        
+        let selectedAttributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont(name: name ?? "", size: size ?? 0.0) as Any,
+            .foregroundColor: selectedColor
+        ]
+        setTitleTextAttributes(selectedAttributes, for: .selected)
     }
 }

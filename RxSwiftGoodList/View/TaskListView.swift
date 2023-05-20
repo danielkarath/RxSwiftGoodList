@@ -20,7 +20,7 @@ class TaskListView: UIView {
     private let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["All", "High", "Normal", "Low"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.font(name: "Kailasa Regular", size: 11)
+        segmentedControl.font(name: "Kailasa Regular", size: 11, normalColor: .black, selectedColor: .systemBlue)
         segmentedControl.tintColor = CustomConstants.textColor
         segmentedControl.frame.size = CGSize(width: 180, height: 32)
         segmentedControl.subviews.forEach { subview in

@@ -40,7 +40,7 @@ class AddTaskView: UIView {
     private let segmentedControl: UISegmentedControl = {
         let segmentedControl = UISegmentedControl(items: ["All", "High", "Normal", "Low"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        segmentedControl.font(name: "Kailasa Regular", size: 11)
+        segmentedControl.font(name: "Kailasa Regular", size: 11, normalColor: .black, selectedColor: .systemBlue)
         segmentedControl.tintColor = CustomConstants.textColor
         segmentedControl.frame.size = CGSize(width: 200, height: 32)
         segmentedControl.subviews.forEach { subview in
@@ -48,6 +48,25 @@ class AddTaskView: UIView {
         }
         segmentedControl.backgroundColor = CustomConstants.contentBackgroundColor
         return segmentedControl
+    }()
+    
+    private let taskTitleDescriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Add a title to your task"
+        label.numberOfLines = 1
+        label.textAlignment = .left
+        label.font = CustomConstants.setFont(fontSize: 12, isBold: false)
+        label.textColor = CustomConstants.textColor
+        return label
+    }()
+    
+    private let taskTextView: UITextView = {
+        let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.backgroundColor = CustomConstants.contentBackgroundColor
+        textView.layer.cornerRadius = 8
+        return textView
     }()
     
     private let saveTaskButton: UIButton = {
@@ -69,6 +88,7 @@ class AddTaskView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = CustomConstants.backgroundColor
         setupConstraints()
+        taskTextView.becomeFirstResponder()
         saveTaskButton.addTarget(self, action: #selector(saveTaskButtonTapped(_:)), for: .touchUpInside)
     }
     
@@ -77,7 +97,7 @@ class AddTaskView: UIView {
     }
     
     private func setupConstraints() {
-        addSubviews(titleLabel, priorityLabel, segmentedControl, saveTaskButton)
+        addSubviews(titleLabel, priorityLabel, segmentedControl, saveTaskButton, taskTitleDescriptionLabel, taskTextView)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -93,6 +113,16 @@ class AddTaskView: UIView {
             segmentedControl.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             segmentedControl.widthAnchor.constraint(equalToConstant: 180),
             segmentedControl.heightAnchor.constraint(equalToConstant: 32),
+            
+            taskTitleDescriptionLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 24),
+            taskTitleDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 14),
+            taskTitleDescriptionLabel.heightAnchor.constraint(equalToConstant: 24),
+            taskTitleDescriptionLabel.widthAnchor.constraint(equalToConstant: 180),
+            
+            taskTextView.topAnchor.constraint(equalTo: taskTitleDescriptionLabel.bottomAnchor, constant: -2),
+            taskTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            taskTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            taskTextView.heightAnchor.constraint(equalToConstant: 128),
             
             saveTaskButton.widthAnchor.constraint(equalToConstant: 60),
             saveTaskButton.heightAnchor.constraint(equalToConstant: 32),
