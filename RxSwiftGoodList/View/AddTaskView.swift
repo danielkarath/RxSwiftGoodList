@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddTaskViewDelegate: AnyObject {
     func didSaveTask()
+    func cancelTask()
 }
 
 class AddTaskView: UIView {
@@ -72,13 +73,27 @@ class AddTaskView: UIView {
     private let saveTaskButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.frame.size = CGSize(width: 60, height: 32)
+        button.frame.size = CGSize(width: UIScreen.main.bounds.width-64, height: 44)
         button.layer.cornerRadius = 8
         button.setTitleColor(CustomConstants.contentBackgroundColor, for: .normal)
         button.backgroundColor = .systemBlue
         button.titleLabel?.font = CustomConstants.setFont(fontSize: 11, isBold: true)
         button.setTitle("Save", for: .normal)
         button.setTitle("Save", for: .highlighted)
+        button.layer.zPosition = 6
+        return button
+    }()
+    
+    private let cancelTaskButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.frame.size = CGSize(width: 50, height: 32)
+        button.layer.cornerRadius = 8
+        button.setTitleColor(.systemBlue, for: .normal)
+        button.backgroundColor = .clear.withAlphaComponent(0.0)
+        button.titleLabel?.font = CustomConstants.setFont(fontSize: 11, isBold: false)
+        button.setTitle("Cancel", for: .normal)
+        button.setTitle("Cancel", for: .highlighted)
         button.layer.zPosition = 6
         return button
     }()
@@ -90,6 +105,7 @@ class AddTaskView: UIView {
         setupConstraints()
         taskTextView.becomeFirstResponder()
         saveTaskButton.addTarget(self, action: #selector(saveTaskButtonTapped(_:)), for: .touchUpInside)
+        cancelTaskButton.addTarget(self, action: #selector(cancelTaskButtonTapped(_:)), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -97,7 +113,7 @@ class AddTaskView: UIView {
     }
     
     private func setupConstraints() {
-        addSubviews(titleLabel, priorityLabel, segmentedControl, saveTaskButton, taskTitleDescriptionLabel, taskTextView)
+        addSubviews(titleLabel, priorityLabel, segmentedControl, saveTaskButton, taskTitleDescriptionLabel, taskTextView, cancelTaskButton)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 24),
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -124,16 +140,26 @@ class AddTaskView: UIView {
             taskTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             taskTextView.heightAnchor.constraint(equalToConstant: 128),
             
-            saveTaskButton.widthAnchor.constraint(equalToConstant: 60),
-            saveTaskButton.heightAnchor.constraint(equalToConstant: 32),
-            saveTaskButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
-            saveTaskButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            saveTaskButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 32),
+            saveTaskButton.heightAnchor.constraint(equalToConstant: 44),
+            saveTaskButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -32),
+            saveTaskButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -32),
+            
+            cancelTaskButton.widthAnchor.constraint(equalToConstant: 60),
+            cancelTaskButton.heightAnchor.constraint(equalToConstant: 32),
+            cancelTaskButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            cancelTaskButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
         ])
     }
     
     @objc
     private func saveTaskButtonTapped(_ sender: UIButton) {
         delegate?.didSaveTask()
+    }
+    
+    @objc
+    private func cancelTaskButtonTapped(_ sender: UIButton) {
+        delegate?.cancelTask()
     }
 
 }

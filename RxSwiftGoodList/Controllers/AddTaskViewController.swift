@@ -33,6 +33,11 @@ class AddTaskViewController: UIViewController {
 }
 
 extension AddTaskViewController: AddTaskViewDelegate {
+    func cancelTask() {
+        print("Did tap cancel task")
+        self.dismiss(animated: true)
+    }
+    
     func didSaveTask() {
         print("Did tap save task")
         self.dismiss(animated: true)
