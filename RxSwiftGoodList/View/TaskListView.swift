@@ -27,6 +27,7 @@ class TaskListView: UIView {
           subview.backgroundColor = CustomConstants.contentBackgroundColor
         }
         segmentedControl.backgroundColor = CustomConstants.contentBackgroundColor
+        segmentedControl.selectedSegmentTintColor = .clear.withAlphaComponent(0.0)
         return segmentedControl
     }()
     

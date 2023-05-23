@@ -18,7 +18,6 @@ class AddTaskViewController: UIViewController {
         setupConstraints()
     }
     
-
     private func setupConstraints() {
         view.addSubviews(addTaskView)
         NSLayoutConstraint.activate([
