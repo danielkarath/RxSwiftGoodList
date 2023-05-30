@@ -6,14 +6,20 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol TaskListViewDelegate: AnyObject {
     func didAddNewTask()
+    func didSelect(priority: Int)
+    func didUpdateTasks(_ tasks: [Task])
 }
 
 class TaskListView: UIView {
     
     public weak var delegate: TaskListViewDelegate?
+    
+    public var filteredTasks = [Task]() 
     
     private var tableView: UITableView?
     
@@ -28,6 +34,7 @@ class TaskListView: UIView {
         }
         segmentedControl.backgroundColor = CustomConstants.contentBackgroundColor
         segmentedControl.selectedSegmentTintColor = .clear.withAlphaComponent(0.0)
+        segmentedControl.selectedSegmentIndex = 0
         return segmentedControl
     }()
     
@@ -53,6 +60,7 @@ class TaskListView: UIView {
         self.backgroundColor = CustomConstants.backgroundColor
         setupConstraints()
         addTaskButton.addTarget(self, action: #selector(addTaskButtonTapped(_:)), for: .touchUpInside)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged(_:)), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -94,6 +102,14 @@ class TaskListView: UIView {
     @objc
     private func addTaskButtonTapped(_ sender: UIButton) {
         delegate?.didAddNewTask()
+    }
+    
+    @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        let priority = sender.selectedSegmentIndex
+        print("Did select priority: \(priority)")
+        
+        
+        delegate?.didSelect(priority: priority)
     }
     
 }
