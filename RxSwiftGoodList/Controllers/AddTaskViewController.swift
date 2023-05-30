@@ -6,10 +6,17 @@
 //
 
 import UIKit
+import RxSwift
 
 class AddTaskViewController: UIViewController {
-
+        
     private let addTaskView = AddTaskView()
+    
+    private let taskSubject = PublishSubject<Task>()
+    public var taskSubjectObservable: Observable<Task> {
+        return taskSubject.asObservable()
+    }
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +35,17 @@ class AddTaskViewController: UIViewController {
             
         ])
     }
-
+    
 }
 
 extension AddTaskViewController: AddTaskViewDelegate {
-    func cancelTask() {
-        print("Did tap cancel task")
+    func didSave(_ task: Task) {
+        taskSubject.onNext(task)
         self.dismiss(animated: true)
     }
     
-    func didSaveTask() {
-        print("Did tap save task")
+    func cancelTask() {
+        print("Did tap cancel task")
         self.dismiss(animated: true)
     }
 }

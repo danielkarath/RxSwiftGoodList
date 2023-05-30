@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol AddTaskViewDelegate: AnyObject {
-    func didSaveTask()
+    func didSave(_ task: Task)
     func cancelTask()
 }
 
@@ -39,7 +40,7 @@ class AddTaskView: UIView {
     }()
     
     private let segmentedControl: UISegmentedControl = {
-        let segmentedControl = UISegmentedControl(items: ["All", "High", "Normal", "Low"])
+        let segmentedControl = UISegmentedControl(items: ["High", "Normal", "Low"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.font(name: "Kailasa Regular", size: 11, normalColor: .black, selectedColor: .systemBlue)
         segmentedControl.tintColor = CustomConstants.textColor
@@ -47,7 +48,9 @@ class AddTaskView: UIView {
         segmentedControl.subviews.forEach { subview in
           subview.backgroundColor = CustomConstants.contentBackgroundColor
         }
+        segmentedControl.selectedSegmentIndex = 1 //Selects the "Normal" item by default
         segmentedControl.backgroundColor = CustomConstants.contentBackgroundColor
+        segmentedControl.selectedSegmentTintColor = .clear.withAlphaComponent(0.0)
         return segmentedControl
     }()
     
@@ -154,7 +157,18 @@ class AddTaskView: UIView {
     
     @objc
     private func saveTaskButtonTapped(_ sender: UIButton) {
-        delegate?.didSaveTask()
+        guard let priority = Priority(rawValue: segmentedControl.selectedSegmentIndex), let taskTitle = taskTextView.text, taskTextView.text != nil else {
+            delegate?.cancelTask()
+            return
+        }
+        let nonWhitespaceTask = taskTitle.replacingOccurrences(of: " ", with: "")
+        let characterCount = nonWhitespaceTask.count
+        guard characterCount > 0 else {
+            delegate?.cancelTask()
+            return
+        }
+        let task = Task(title: taskTitle, priority: priority)
+        delegate?.didSave(task)
     }
     
     @objc
