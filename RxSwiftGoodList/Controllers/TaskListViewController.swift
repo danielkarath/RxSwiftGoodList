@@ -56,7 +56,6 @@ extension TaskListViewController: TaskListViewDelegate {
                 var currentTasks = self.tasks.value
                 currentTasks.append(task)
                 self.tasks.accept(currentTasks)
-                print("Did save task: \(task.title)\nwith priority: \(priority)")
 
                 self.taskListView.delegate?.didUpdateTasks(currentTasks) // Call the delegate method here
             }).disposed(by: disposebag)
