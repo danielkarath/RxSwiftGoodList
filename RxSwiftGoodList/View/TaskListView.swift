@@ -19,7 +19,7 @@ class TaskListView: UIView {
     
     public weak var delegate: TaskListViewDelegate?
     
-    public var filteredTasks = [Task]() 
+    public var filteredTasks = [Task]()
     
     private var tableView: UITableView?
     
@@ -27,10 +27,10 @@ class TaskListView: UIView {
         let segmentedControl = UISegmentedControl(items: ["All", "High", "Normal", "Low"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.font(name: "Kailasa Regular", size: 11, normalColor: .black, selectedColor: .systemBlue)
-        segmentedControl.tintColor = CustomConstants.textColor
+        segmentedControl.tintColor = CustomConstants.basicFontColor
         segmentedControl.frame.size = CGSize(width: 180, height: 32)
         segmentedControl.subviews.forEach { subview in
-          subview.backgroundColor = CustomConstants.contentBackgroundColor
+            subview.backgroundColor = CustomConstants.contentBackgroundColor
         }
         segmentedControl.backgroundColor = CustomConstants.contentBackgroundColor
         segmentedControl.selectedSegmentTintColor = .clear.withAlphaComponent(0.0)
@@ -112,6 +112,10 @@ class TaskListView: UIView {
         delegate?.didSelect(priority: priority)
     }
     
+    func reloadTableView() {
+        tableView?.reloadData()
+    }
+    
 }
 
 extension TaskListView: UITableViewDelegate, UITableViewDataSource {
@@ -121,13 +125,15 @@ extension TaskListView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return filteredTasks.count ?? 5
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TaskListTableViewCell.cellidentifier, for: indexPath) as? TaskListTableViewCell else {
             fatalError("Unsupported cell")
         }
+        let task = filteredTasks[indexPath.row]
+        cell.configure(with: task)
         return cell
     }
     

@@ -45,8 +45,9 @@ extension TaskListViewController: TaskListViewDelegate {
     }
     
     func didUpdateTasks(_ tasks: [Task]) {
-            taskListView.filteredTasks = tasks
-        }
+        taskListView.filteredTasks = tasks
+        taskListView.reloadTableView()
+    }
     
     func didAddNewTask() {
         let addNewTaskVC = AddTaskViewController()

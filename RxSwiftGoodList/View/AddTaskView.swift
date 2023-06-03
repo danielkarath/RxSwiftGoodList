@@ -24,7 +24,7 @@ class AddTaskView: UIView {
         label.numberOfLines = 1
         label.textAlignment = .center
         label.font = CustomConstants.setFont(fontSize: 16, isBold: true)
-        label.textColor = CustomConstants.textColor
+        label.textColor = CustomConstants.basicFontColor
         return label
     }()
     
@@ -35,7 +35,7 @@ class AddTaskView: UIView {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.font = CustomConstants.setFont(fontSize: 12, isBold: false)
-        label.textColor = CustomConstants.textColor
+        label.textColor = CustomConstants.basicFontColor
         return label
     }()
     
@@ -43,7 +43,7 @@ class AddTaskView: UIView {
         let segmentedControl = UISegmentedControl(items: ["High", "Normal", "Low"])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         segmentedControl.font(name: "Kailasa Regular", size: 11, normalColor: .black, selectedColor: .systemBlue)
-        segmentedControl.tintColor = CustomConstants.textColor
+        segmentedControl.tintColor = CustomConstants.basicFontColor
         segmentedControl.frame.size = CGSize(width: 200, height: 32)
         segmentedControl.subviews.forEach { subview in
           subview.backgroundColor = CustomConstants.contentBackgroundColor
@@ -61,7 +61,7 @@ class AddTaskView: UIView {
         label.numberOfLines = 1
         label.textAlignment = .left
         label.font = CustomConstants.setFont(fontSize: 12, isBold: false)
-        label.textColor = CustomConstants.textColor
+        label.textColor = CustomConstants.basicFontColor
         return label
     }()
     
