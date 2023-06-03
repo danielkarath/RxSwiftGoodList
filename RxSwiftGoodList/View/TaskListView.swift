@@ -105,9 +105,7 @@ class TaskListView: UIView {
     }
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        let priority = sender.selectedSegmentIndex
-        print("Did select priority: \(priority)")
-        
+        let priority = sender.selectedSegmentIndex        
         
         delegate?.didSelect(priority: priority)
     }

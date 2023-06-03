@@ -14,7 +14,6 @@ class TaskListViewController: UIViewController {
     let taskListView = TaskListView()
     private let disposebag = DisposeBag()
     public var tasks = BehaviorRelay(value: [Task]())
-    private var filteredPriority: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +35,42 @@ class TaskListViewController: UIViewController {
             
         ])
     }
+    
+    private func filter(by priorityNum: Int) {
+        var priority: Priority?
+        switch priorityNum {
+        case 0:
+            priority = nil
+        case 1:
+            priority = .high
+        case 2:
+            priority = .normal
+        case 3:
+            priority = .low
+        default:
+            priority = nil
+        }
+        
+        if priority == nil {
+            taskListView.filteredTasks = self.tasks.value
+        } else {
+            self.tasks.map { tasks in
+                return tasks.filter { $0.priority == priority}
+            }.subscribe(onNext: { [weak self] tasks in
+                self?.taskListView.filteredTasks = tasks
+                print("filtered tasks: \(tasks)")
+            }).disposed(by: disposebag)
+        }
+        
+    }
 
 }
 
 extension TaskListViewController: TaskListViewDelegate {
     func didSelect(priority: Int) {
-        filteredPriority = priority
+        print("Selected priority value is: \(priority)")
+        filter(by: priority)
+        didUpdateTasks(taskListView.filteredTasks)
     }
     
     func didUpdateTasks(_ tasks: [Task]) {
@@ -57,7 +86,7 @@ extension TaskListViewController: TaskListViewDelegate {
                 var currentTasks = self.tasks.value
                 currentTasks.append(task)
                 self.tasks.accept(currentTasks)
-
+                
                 self.taskListView.delegate?.didUpdateTasks(currentTasks) // Call the delegate method here
             }).disposed(by: disposebag)
         self.present(addNewTaskVC, animated: true, completion: nil)
